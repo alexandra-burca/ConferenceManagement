@@ -13,7 +13,7 @@ def registerPage(request):
             form.save()
             username = form.cleaned_data.get("username")
             messages.success(request, f"You have created an account with the username {username}. You may login.")
-            return redirect('conbase:home')
+            return redirect('conbase:dashboard')
     else:
         form = RegisterForm()
     context = {"form": form}
@@ -31,7 +31,7 @@ def loginPage(request):
             # user = authenticate(request, username=email, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('conbase:home')
+                return redirect('conbase:dashboard')
     else:
         form = AuthenticationForm()
 
