@@ -30,6 +30,7 @@ urlpatterns = [
     path('', include('conbase.urls')),
     path('register', user_views.registerPage, name="register"),
     path('login', user_views.loginPage, name="login"),
+    path('profile', user_views.profilePage, name="profile"),
 ]
 
 if settings.DEBUG:
